@@ -128,8 +128,9 @@ const JobPage = ({ deleteJob }) => {
 };
 
 // a resuseable function for fetching data by id 
+const API_URL = "https://react-jobs-t7pm.onrender.com/jobs";
 const jobLoader = async ({ params }) => {
-    const res = await fetch(`/api/jobs/${params.id}`);
+    const res = await fetch(`${API_URL}/${params.id}`);
     const data = await res.json();
     return data;
 }

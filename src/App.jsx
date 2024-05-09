@@ -14,11 +14,11 @@ import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 
 
-
+const API_URL = "https://react-jobs-t7pm.onrender.com/jobs";
 function App() {
 //add new job
   const addJob = async (newJob) => {
-    const res = await fetch('/api/jobs', {
+    const res = await fetch(`${API_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function App() {
 
   //delete job
   const deleteJob = async (id) => {
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`${API_URL}/${id}`, {
       method: "DELETE",
       
     });
@@ -39,7 +39,7 @@ function App() {
 
   //update job
   const updateJob = async (job) => {
-    const res = await fetch(`/api/jobs/${job.id}`, {
+    const res = await fetch(`${API_URL}/${job.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
