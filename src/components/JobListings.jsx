@@ -26,7 +26,7 @@ const JobListings = ({isHome = false}) => {
       }
     }
     fetchJobs();
-  }, [jobs]);
+  }, [apiUrl]);
   
    // console.log(jobs)
   return (
